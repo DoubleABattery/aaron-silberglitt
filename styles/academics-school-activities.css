@@ -1,0 +1,54 @@
+h2{
+    margin-top: 60px;
+} 
+
+.images{
+    display: grid;
+    align-items: center;   
+    margin-bottom: 70px;
+    margin-top: 40px;
+    gap: 70px;
+}
+
+.orch-img{
+    width: 100%;   
+}
+
+.tennis-img{
+    width: 100%;
+}
+
+.orch-images{
+    grid-template-columns: 400px 400px
+}
+
+.tennis-images{
+    grid-template-columns: 300px 300px;
+}
+
+@media (max-width: 1000px){
+    .orch-images{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 785px){
+    .tennis-images{
+        grid-template-columns: 1fr;
+    }
+}
+
+.ap-list{
+    list-style: none;    
+}
+
+.ap-list li {
+  background: url('../icons/ap.png') no-repeat left center;
+  background-size: clamp(40px, 5vw, 50px);
+  padding-left: clamp(47px, 6vw, 60px);
+}
+
+iframe{
+    width: clamp(2px, 100%, 960px);
+    aspect-ratio: 16/9;
+}

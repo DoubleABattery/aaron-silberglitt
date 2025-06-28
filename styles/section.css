@@ -1,0 +1,238 @@
+body{
+    padding-left: 40px;
+    padding-top: 53px;
+    margin-bottom: 0;
+    margin-right: 0;
+    background-color: var(--bgcolor);
+}
+
+main{
+    padding-left: 8vw;
+    padding-right: 8vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 20;
+}
+
+h1{
+    color: var(--blue);
+    margin-bottom: 1.3em;
+}
+
+h2{
+    font-size: 1.167em;
+}
+
+h3{
+    font-weight: 500;
+}
+
+figcaption{
+    color: gray;
+}
+
+.list{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+header{
+    position: fixed;
+    background-color: black;
+    right: 0;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    color: white;
+    font-weight: bold;
+    font-size: 27px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.first-name{
+    color: var(--blue);
+    transition: 0.3s;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.logo:hover{   
+    background: linear-gradient(
+    270deg,
+    white,
+    LightSteelBlue,
+    white,
+    LightSteelBlue
+    );
+    background-size: 300% 300%;
+}
+
+.logo:hover .first-name{
+    background: linear-gradient(
+    270deg,
+    white,
+    var(--blue),
+    white,
+    var(--blue)
+    );
+    background-size: 300% 300%;   
+}
+
+.logo:hover, .logo:hover .first-name{
+    background-clip: text;
+    color: transparent;
+    animation: logo-gradient 2s linear infinite;
+}
+
+@keyframes logo-gradient{
+    0% {
+    background-position: 100% 100%;
+  }
+ 
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    transition: z-index 0.3s;
+}
+
+nav:hover{
+    transition: none;
+    z-index: 50;
+}
+
+.sidebar{
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    padding: 0.5vw;
+    
+}
+
+.sidebar-hidden{
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sidebar-hidden, .sidebar-shown{
+    position: relative;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    justify-content: center;
+    transition: opacity 0.3s;
+    padding: 4vw 2vw 4vw 1vw;
+}
+
+.nav-link{
+    padding: 1.5vw 0px 1.5vw 0px;
+    font-size: clamp(15px, 2vw, 27px);
+    flex-grow: 0.09;
+}
+
+.caret, .caret-clicked{
+    width: clamp(15px, 3vw, 20px);
+    fill: white;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.caret-clicked{
+    rotate: 180deg;
+    fill: #004aad;
+}
+
+.caret:hover {
+    cursor: pointer;
+}
+
+@media (hover:hover){    
+    .sidebar:hover + .sidebar-hidden,
+    .sidebar-hidden:hover
+    {   opacity: 1;
+        pointer-events: all;                         
+    }
+
+    nav:hover .caret{
+        fill: var(--blue);
+    }
+}
+
+.sidebar-shown{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.nav-link-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    width: 100%;
+    flex-grow: 0;
+}
+
+ .footer{
+    position: absolute;
+    background-color: black;
+    left: 0;
+    right: 0;
+    bottom: -1;
+    display: flex;
+    z-index: 100;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-container{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.contact-icon{
+    width: 25px;
+    fill: none;
+    stroke-width: 20px;
+    stroke: white;
+}
+
+.status{
+    margin-right: 25px;
+    color: white;
+}
+
+@media (max-width: 650px) {
+    footer {
+        flex-direction: column;
+    }
+    .status{
+        margin-right: 0;
+    }
+}
+
+img{
+    border: 2px solid gray;
+    border-radius: 2px;
+}

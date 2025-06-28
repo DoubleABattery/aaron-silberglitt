@@ -1,0 +1,71 @@
+:root{
+    --textcolor: white;
+    --bgcolor: rgb(32, 35, 46);
+    --blue: #004aad;
+}
+
+svg{
+    transition: 0.3s;
+}
+
+body{
+    font-family: Roboto, Arial;
+}
+
+article{
+    color: var(--textcolor);
+    margin-bottom: 200px;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+}
+
+abbr{
+    text-decoration: none;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex: 1;
+    border-bottom: 1px solid white;    
+    white-space: nowrap;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: var(--blue);
+}
+
+.info-text{
+    color: white;
+}
+
+.info{
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    align-items: center;
+}
+
+.info:hover svg, .info:hover p{
+    fill: var(--blue);
+    stroke: var(--blue);
+    color: var(--blue);
+}
+
+.info p{
+    transition: 0.3s;
+}

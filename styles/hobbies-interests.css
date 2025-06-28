@@ -1,0 +1,79 @@
+section{
+    display: grid;
+    align-items: center;
+    column-gap: 30px;
+    margin-bottom: 100px;
+}
+
+.violin{
+    grid-template-columns: 1fr 400px;
+}
+
+.violin-image{
+    width: clamp(200px, 100%, 400px);
+}
+
+.coding{
+    grid-template-columns: 2fr 1fr;
+}
+
+.coding-images{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+@media (max-width: 1330px) {
+    .coding-images{
+        flex-direction: column;        
+    }
+}
+
+@media (max-width: 800px) {
+    .coding-images{
+        flex-direction: column;       
+    }
+}
+
+.coding-image{
+    width: 250px;  
+}
+
+.website-image{
+    width: 400px;
+}
+
+.tennis{
+    grid-template-columns: 1fr 400px;
+}
+
+.tennis-image{
+    width: clamp(200px, 100%, 400px);
+}
+
+@media (max-width: 980px) {
+    .coding-images{
+        flex-direction: row;        
+    }
+    .coding{
+        grid-template-columns: 1fr;
+    }
+    .violin{
+        grid-template-columns: 1fr;
+    }
+    .tennis{
+        grid-template-columns: 1fr;        
+    }
+}
+
+@media (max-width: 800px) {
+    .coding-images{
+        flex-direction: column;        
+    }
+    .coding-image{
+        width: clamp(200px, 100%, 250px);  
+    }
+    .website-image{
+        width: clamp(300px, 100%, 400px);
+    }
+}
