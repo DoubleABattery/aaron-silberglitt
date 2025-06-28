@@ -224,7 +224,7 @@ nav:hover{
 }
 
 @media (max-width: 650px) {
-    footer {
+    .footer {
         flex-direction: column;
     }
     .status{

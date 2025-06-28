@@ -1,7 +1,11 @@
 :root{
+    --blue: #004aad;
     --textcolor: white;
     --bgcolor: rgb(32, 35, 46);
-    --blue: #004aad;
+    --lighttextcolor: black;
+    --lightbgcolor: #f0f0f0;
+    --darktextcolor: white;
+    --darkbgcolor: rgb(32, 35, 46);
 }
 
 svg{
