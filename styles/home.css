@@ -140,7 +140,7 @@ h1 {
     transition: 0.3s;   
 }
 
-abbr{
+.info-container div{
     opacity: 0;
     transform: translate(0px, 50px);
     animation: info 1.5s ease-in-out 1 forwards;
