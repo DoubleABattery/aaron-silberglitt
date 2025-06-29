@@ -30,6 +30,12 @@ function main() {
             sidebar.classList.toggle("sidebar-shown");
             caret.classList.toggle("caret-clicked");
         };
+        document.querySelector("main").onclick = () => {
+            if (sidebar.classList.contains("sidebar-shown")) {
+                sidebar.classList.remove("sidebar-shown");
+                caret.classList.remove("caret-clicked");
+            }
+        }    
     } else {
         caret.onmouseover = () => {
             caret.classList.add("caret-hover");
