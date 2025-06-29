@@ -120,7 +120,7 @@ nav{
     transition: z-index 0.3s;
 }
 
-nav:hover{
+.nav-active{
     transition: none;
     z-index: 50;
 }
@@ -184,6 +184,10 @@ nav:hover{
     .sidebar:hover .caret{
         fill: var(--blue);
     }
+    nav:hover{
+    transition: none;
+    z-index: 50;
+}
 }
 
 .sidebar-shown{

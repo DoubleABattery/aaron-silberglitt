@@ -18,6 +18,7 @@ function main() {
     const sidebar = document.querySelector(".sidebar-hidden");
     const caret = document.querySelector(".caret");
     const themeIcon = document.querySelector(".theme-icon");
+    const nav = document.querySelector("nav");
 
     themeIcon.onclick = () => {
         document.body.classList.toggle("light-theme");
@@ -29,13 +30,15 @@ function main() {
         caret.onclick = () => {
             sidebar.classList.toggle("sidebar-shown");
             caret.classList.toggle("caret-clicked");
+            nav.classList.toggle("nav-active");
         };
         document.querySelector("main").onclick = () => {
-            if (sidebar.classList.contains("sidebar-shown")) {
-                sidebar.classList.remove("sidebar-shown");
-                caret.classList.remove("caret-clicked");
-            }
-        }    
+            sidebar.classList.toggle("sidebar-shown", false);
+            caret.classList.toggle("caret-clicked", false);
+            nav.classList.toggle("nav-active", false);
+        }
+
+
     } else {
         caret.onmouseover = () => {
             caret.classList.add("caret-hover");
