@@ -114,7 +114,7 @@ header .logo{
 nav{
     position: fixed;
     display: flex;
-    top: 0;
+    top: 60px;
     bottom: 0;
     left: 0;
     z-index: 0;
@@ -148,6 +148,7 @@ nav{
     justify-content: center;
     transition: opacity 0.3s;
     padding: 4vw 2vw 4vw 1vw;
+    overflow-y: scroll;
 }
 
 .nav-link{
