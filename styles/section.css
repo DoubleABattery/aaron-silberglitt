@@ -164,6 +164,7 @@ nav:hover{
 
 .caret-clicked{
     rotate: 180deg;
+    fill: var(--blue);
 }
 
 .caret:hover {
