@@ -9,6 +9,8 @@ body{
 .light-theme{
     --textcolor: black;
     --bgcolor: #f0f0f0;
+    --element-bg: var(--gray);
+    --img-color: rgb(70, 70, 70);
 }
 
 main{
@@ -34,7 +36,12 @@ h3{
 }
 
 figcaption{
-    color: gray;
+    color: var(--img-color);
+}
+
+img{
+    border: 2px solid var(--img-color);
+    border-radius: 2px;
 }
 
 .list{
@@ -44,7 +51,7 @@ figcaption{
 
 header{
     position: fixed;
-    background-color: black;
+    background-color: var(--element-bg);
     right: 0;
     left: 0;
     top: 0;
@@ -128,7 +135,7 @@ nav{
 
 .sidebar{
     display: flex;
-    background-color: black;
+    background-color: var(--element-bg);
     justify-content: center;
     padding: 0.5vw;
 }
@@ -144,7 +151,7 @@ nav{
     display: flex;
     top: 0;
     bottom: 0;
-    background-color: black;
+    background-color: var(--element-bg);
     justify-content: center;
     transition: opacity 0.3s;
     padding: 4vw 2vw 4vw 1vw;
@@ -208,7 +215,7 @@ nav{
 
  .footer{
     position: absolute;
-    background-color: black;
+    background-color: var(--element-bg);
     left: 0;
     right: 0;
     bottom: -1;
@@ -271,9 +278,4 @@ nav{
     .status{
         margin-right: 0;
     }
-}
-
-img{
-    border: 2px solid gray;
-    border-radius: 2px;
 }
