@@ -1,28 +1,48 @@
-const sidebar = document.querySelector(".sidebar-hidden");
-const caret = document.querySelector(".caret");
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-function loadHTML(id, file){
-    fetch(file)
-    .then(response => {
-        if (response.ok) {
-            return response.text()
-        }
-        throw new Error(`Could not load ${file}`);
-    })
-    .then(html => document.getElementById(id).innerHTML = html);
+async function loadHTML(id, file) {
+    const response = await fetch(file);
+    if (!response.ok) throw new Error(`Failed to load ${file}`);
+    const html = await response.text();
+    document.getElementById(id).innerHTML = html;
+  }
+
+async function loadElements() {
+    await loadHTML("nav", "elements/nav.html");
+    await loadHTML("footer", "elements/footer.html");
+    await loadHTML("header", "elements/header.html");
+    main();
 }
 
+function main() {
+    const sidebar = document.querySelector(".sidebar-hidden");
+    const caret = document.querySelector(".caret");
+    const themeIcon = document.querySelector(".theme-icon");
 
-loadHTML("header", "elements/header.html");
-loadHTML("nav", "elements/nav.html");
-loadHTML("footer", "elements/footer.html");
+    themeIcon.onclick = () => {
+        document.body.classList.toggle("light-theme");
+        themeIcon.classList.toggle("moon");
+        themeIcon.classList.toggle("sun");
+    };
 
-
-if (isMobile){
-    caret.onclick = () => {
-        sidebar.classList.toggle("sidebar-shown");
-        caret.classList.toggle("caret-clicked");        
+    if (isMobile) {
+        caret.onclick = () => {
+            sidebar.classList.toggle("sidebar-shown");
+            caret.classList.toggle("caret-clicked");
+        };
+    } else {
+        caret.onmouseover = () => {
+            caret.classList.add("caret-hover");
+        };
+        sidebar.onmouseover = () => {
+            caret.classList.add("caret-hover");
+        };
+        document.querySelector("nav").onmouseout = () => {
+            caret.classList.remove("caret-hover");
+        };
     }
 }
 
+loadElements().catch(error => {
+    console.error("Error loading elements:", error);
+});

@@ -6,6 +6,11 @@ body{
     background-color: var(--bgcolor);
 }
 
+.light-theme{
+    --textcolor: black;
+    --bgcolor: #f0f0f0;
+}
+
 main{
     padding-left: 8vw;
     padding-right: 8vw;
@@ -49,21 +54,21 @@ header{
     z-index: 100;
 }
 
+header .logo{
+    margin-left: 20px;
+}
+
 .logo{
     color: white;
     font-weight: bold;
     font-size: 27px;
-    padding: 10px;
+    padding: 13px;
     transition: 0.3s;
 }
 
 .first-name{
     color: var(--blue);
     transition: 0.3s;
-}
-
-.logo:hover{
-    cursor: pointer;
 }
 
 .logo:hover{   
@@ -75,6 +80,7 @@ header{
     LightSteelBlue
     );
     background-size: 300% 300%;
+    cursor: pointer;
 }
 
 .logo:hover .first-name{
@@ -124,7 +130,6 @@ nav:hover{
     background-color: black;
     justify-content: center;
     padding: 0.5vw;
-    
 }
 
 .sidebar-hidden{
@@ -159,11 +164,14 @@ nav:hover{
 
 .caret-clicked{
     rotate: 180deg;
-    fill: #004aad;
 }
 
 .caret:hover {
     cursor: pointer;
+}
+
+.caret-hover{
+    fill: var(--blue);
 }
 
 @media (hover:hover){    
@@ -172,8 +180,7 @@ nav:hover{
     {   opacity: 1;
         pointer-events: all;                         
     }
-
-    nav:hover .caret{
+    .sidebar:hover .caret{
         fill: var(--blue);
     }
 }
@@ -216,6 +223,33 @@ nav:hover{
     fill: none;
     stroke-width: 20px;
     stroke: white;
+}
+
+.moon{
+    /*Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.*/
+    mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>');
+    width: 28px;
+    height: 28px;
+}
+
+.sun { 
+    /* Icon by https://icons8.com */
+    mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><path d="M36 23c7.18 0 13 5.82 13 13s-5.82 13-13 13-13-5.82-13-13S28.82 23 36 23zM40 11c0 .732 0 3.268 0 4 0 2.209-1.791 4-4 4s-4-1.791-4-4c0-.732 0-3.268 0-4 0-2.209 1.791-4 4-4S40 8.791 40 11zM56.506 21.151c-.518.518-2.311 2.311-2.828 2.828-1.562 1.562-4.095 1.562-5.657 0s-1.562-4.095 0-5.657c.518-.518 2.311-2.311 2.828-2.828 1.562-1.562 4.095-1.562 5.657 0S58.068 19.589 56.506 21.151zM61 40c-.732 0-3.268 0-4 0-2.209 0-4-1.791-4-4s1.791-4 4-4c.732 0 3.268 0 4 0 2.209 0 4 1.791 4 4S63.209 40 61 40zM50.849 56.506c-.518-.518-2.311-2.311-2.828-2.828-1.562-1.562-1.562-4.095 0-5.657s4.095-1.562 5.657 0c.518.518 2.311 2.311 2.828 2.828 1.562 1.562 1.562 4.095 0 5.657S52.411 58.068 50.849 56.506zM32 61c0-.732 0-3.268 0-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 .732 0 3.268 0 4 0 2.209-1.791 4-4 4S32 63.209 32 61zM15.494 50.849c.518-.518 2.311-2.311 2.828-2.828 1.562-1.562 4.095-1.562 5.657 0s1.562 4.095 0 5.657c-.518.518-2.311 2.311-2.828 2.828-1.562 1.562-4.095 1.562-5.657 0S13.932 52.411 15.494 50.849zM11 32c.732 0 3.268 0 4 0 2.209 0 4 1.791 4 4s-1.791 4-4 4c-.732 0-3.268 0-4 0-2.209 0-4-1.791-4-4S8.791 32 11 32zM21.151 15.494c.518.518 2.311 2.311 2.828 2.828 1.562 1.562 1.562 4.095 0 5.657s-4.095 1.562-5.657 0c-.518-.518-2.311-2.311-2.828-2.828-1.562-1.562-1.562-4.095 0-5.657S19.589 13.932 21.151 15.494z"></path></svg>');
+    width: 35px;
+    height: 35px;
+}
+
+.theme-icon{
+    position: fixed;
+    left: 15px;
+    mask-repeat: no-repeat;
+    background-color: white;
+    transition: background-color 0.3s;
+}
+
+.theme-icon:hover{
+    background-color: var(--blue);
+    cursor: pointer;
 }
 
 .status{
