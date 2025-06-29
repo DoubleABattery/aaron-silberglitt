@@ -52,6 +52,7 @@ header{
     justify-content: center;
     align-items: center;
     z-index: 100;
+    border-bottom: rgb(22, 22, 22) 1px solid;
 }
 
 header .logo{

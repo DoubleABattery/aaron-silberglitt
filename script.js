@@ -31,14 +31,12 @@ function main() {
             sidebar.classList.toggle("sidebar-shown");
             caret.classList.toggle("caret-clicked");
             nav.classList.toggle("nav-active");
-        };
+        }
         document.querySelector("main").onclick = () => {
             sidebar.classList.toggle("sidebar-shown", false);
             caret.classList.toggle("caret-clicked", false);
             nav.classList.toggle("nav-active", false);
         }
-
-
     } else {
         caret.onmouseover = () => {
             caret.classList.add("caret-hover");
