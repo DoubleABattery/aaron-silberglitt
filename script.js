@@ -7,23 +7,32 @@ async function loadHTML(id, file) {
     document.getElementById(id).innerHTML = html;
   }
 
-async function loadElements() {
-    await loadHTML("nav", "elements/nav.html");
-    await loadHTML("footer", "elements/footer.html");
-    await loadHTML("header", "elements/header.html");
-    main();
-}
+Promise.all([
+  loadHTML("header", "elements/header.html"),
+  loadHTML("nav", "elements/nav.html"),
+  loadHTML("footer", "elements/footer.html")
+]).then(() => {
+  main();
+}).catch(err => console.error(err));
 
 function main() {
     const sidebar = document.querySelector(".sidebar-hidden");
     const caret = document.querySelector(".caret");
     const themeIcon = document.querySelector(".theme-icon");
     const nav = document.querySelector("nav");
+    var theme = localStorage.getItem("theme") || "dark";
+    if (theme === "light") {
+        document.body.classList.add("light-theme");
+        themeIcon.classList.add("moon");
+        themeIcon.classList.toggle("sun");
+    }
 
     themeIcon.onclick = () => {
         document.body.classList.toggle("light-theme");
         themeIcon.classList.toggle("moon");
         themeIcon.classList.toggle("sun");
+        localStorage.setItem("theme", document.body.classList.contains("light-theme") ? "light" : "dark");
+        theme = localStorage.getItem("theme");
     };
 
     if (isMobile) {
