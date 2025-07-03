@@ -8,7 +8,7 @@ body{
 
 .light-theme{
     --textcolor: black;
-    --bgcolor: #f0f0f0;
+    --bgcolor: #e4e4e4;
     --element-bg: var(--gray);
     --img-color: rgb(70, 70, 70);
 }
