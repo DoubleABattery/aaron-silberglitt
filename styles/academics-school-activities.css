@@ -43,7 +43,7 @@ h2{
 }
 
 .ap-list li {
-  background: url('../icons/ap.png') no-repeat left center;
+  background: url('../icons/ap.webp') no-repeat left center;
   background-size: clamp(40px, 5vw, 50px);
   padding-left: clamp(47px, 6vw, 60px);
 }
