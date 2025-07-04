@@ -20,18 +20,20 @@ function main() {
     const caret = document.querySelector(".caret");
     const themeIcon = document.querySelector(".theme-icon");
     const nav = document.querySelector("nav");
+    const body = document.body;
+    
     var theme = localStorage.getItem("theme") || "dark";
     if (theme === "light") {
-        document.body.classList.add("light-theme");
+        body.classList.add("light-theme");
         themeIcon.classList.add("moon");
         themeIcon.classList.toggle("sun");
     }
 
     themeIcon.onclick = () => {
-        document.body.classList.toggle("light-theme");
+        body.classList.toggle("light-theme");
         themeIcon.classList.toggle("moon");
         themeIcon.classList.toggle("sun");
-        localStorage.setItem("theme", document.body.classList.contains("light-theme") ? "light" : "dark");
+        localStorage.setItem("theme", body.classList.contains("light-theme") ? "light" : "dark");
         theme = localStorage.getItem("theme");
     };
 

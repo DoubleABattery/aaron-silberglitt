@@ -22,10 +22,32 @@ main{
     z-index: 20;
 }
 
+article{
+    margin-bottom: 50px;
+}
+
+.content{
+    opacity: 0;
+    animation: fade-in 1.5s ease-out 1 forwards;
+    animation-delay: .2s;
+    transform: translate(0, 4vw);
+}
+
 h1{
     color: var(--blue);
     margin-bottom: 1.3em;
+    opacity: 0;
+    transform: translate(0, -1.5vw);
+    animation: fade-in 1s ease-out 1 forwards;
 }
+
+@keyframes fade-in{
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+
 
 h2{
     font-size: 1.167em;
