@@ -196,7 +196,7 @@ nav{
     nav:hover{
     transition: none;
     z-index: 50;
-}
+    }
 }
 
 .sidebar-shown{
