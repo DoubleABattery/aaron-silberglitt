@@ -60,7 +60,3 @@ function main() {
         };
     }
 }
-
-loadElements().catch(error => {
-    console.error("Error loading elements:", error);
-});
